@@ -1,8 +1,4 @@
-'use client';
-
-import { DropdownMenu, Modal, Popover, Select, Switch } from 'src/ui-base';
-
-export default function HomePage() {
+export default function Home() {
   return (
     <div>
       <h1>Next13 - prove of concept</h1>
@@ -13,13 +9,8 @@ export default function HomePage() {
         <li>typescript</li>
         <li>tailwindcss</li>
         <li>headles ui</li>
-        <li>pocketbase</li>
+        <li>GraphqlApi</li>
       </ul>
-      <Switch />
-      <DropdownMenu />
-      <Select />
-      <Modal />
-      <Popover />
     </div>
   );
 }
