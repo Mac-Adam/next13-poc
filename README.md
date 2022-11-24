@@ -68,3 +68,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
    - use nexus to create types and queries in types folder
 6. create /pages/api/graphql.ts file run the grahpql in there
 7. api should be up and running
+
+## API ClientSide
+
+1. run npm install @apollo/client
+2. setup apolloClient in /lib/apollo.ts
+3. wrap whole app with apollo provider
+4. query as much as you want

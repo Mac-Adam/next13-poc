@@ -1,16 +1,34 @@
-export default function Home() {
+import Head from 'next/head';
+import { gql, useQuery } from '@apollo/client';
+
+const AllDrinksQuery = gql`
+  query {
+    things {
+      id
+      name
+      amount
+    }
+  }
+`;
+export default function Home({}) {
+  const { data, loading, error } = useQuery(AllDrinksQuery);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Oh no... {error.message}</p>;
+
   return (
     <div>
-      <h1>Next13 - prove of concept</h1>
-      <p>tech stack:</p>
-      <ul>
-        <li>next.js</li>
-        <li>react</li>
-        <li>typescript</li>
-        <li>tailwindcss</li>
-        <li>headles ui</li>
-        <li>GraphqlApi</li>
-      </ul>
+      <Head>
+        <title>Random Things</title>
+      </Head>
+
+      <div>
+        {data.things.map((thing: any) => (
+          <p key={thing.id}>
+            Name: {thing.name} Amount: {thing.amount}
+          </p>
+        ))}
+      </div>
     </div>
   );
 }
