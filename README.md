@@ -40,18 +40,18 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
    /prisma folder will be crated
    update databse url to suit your needs
 3. update /prisma/prisma.schema with db model
-   3.1 Optionally run npx prisma format
+   - Optionally run npx prisma format
 4. run npx prisma db push
 5. run npm install @prisma/client
 6. run npm install ts-node -D
-   6.1 Add
-   "ts-node": { + "compilerOptions": { + "module": "commonjs" + }}
-   to tsconfig.js
-   6.2 run npm i -D ts-node typescript @types/node
-   6.3 add "prisma": {
-   "seed": "ts-node prisma/seed.ts"
-   }
-   to package.json
+   - Add
+     "ts-node": { + "compilerOptions": { + "module": "commonjs" + }}
+     to tsconfig.js
+   - run npm i -D ts-node typescript @types/node
+   - add "prisma": {
+     "seed": "ts-node prisma/seed.ts"
+     }
+     to package.json
 7. create /prisma/seed.ts
-   7.1 Optionally run it with npx prisma db seed
+   - Optionally run it with npx prisma db seed
 8. Db setup finished run npx prisma studio to explore db
