@@ -55,3 +55,16 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 7. create /prisma/seed.ts
    - Optionally run it with npx prisma db seed
 8. Db setup finished run npx prisma studio to explore db
+
+## API Setup
+
+1. install required packages run npm install apollo-server-micro(this package is deprecated but it works and I am not able to easly make @apollo/server work so we will use this one) graphql micro-cors
+2. create graphql folder wiht index.ts file
+   - get cors types npm i --save-dev @types/micro-cors
+3. crate context.ts schema.ts and types folder files in graphql folder
+4. crate prisma.ts file f.ex in /prisma folder to handle prisma conections
+5. run npm install nexus
+   - use nexus to create schema
+   - use nexus to create types and queries in types folder
+6. create /pages/api/graphql.ts file run the grahpql in there
+7. api should be up and running
