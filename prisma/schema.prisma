@@ -7,11 +7,15 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgres://bvuubmnuklchdi:e9d4939aba1af3335fde27828035626c822b0cafe0aea7b2ad7fbd25005ef9fd@ec2-52-210-97-223.eu-west-1.compute.amazonaws.com:5432/d82udc5l5d56jn"
+   url      = env("DATABASE_URL")
 }
 
 model Thing {
   id     String @id @default(uuid())
   name   String
   amount Int
+}
+model User{
+  id String @id
+  email String @unique
 }

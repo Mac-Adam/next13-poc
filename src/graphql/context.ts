@@ -1,10 +1,20 @@
+import { getSession, Session } from '@auth0/nextjs-auth0';
 import { PrismaClient } from '@prisma/client';
 import prisma from '../../prisma/pisma';
+import { validateUser } from './auth/validateUser';
+export type User = {
+  id: string;
+  email: string;
+};
 export type Context = {
   prisma: PrismaClient;
+  user: User | undefined;
 };
 export async function createContext({ req, res }: { req: any; res: any }): Promise<Context> {
+  const session = getSession(req, res);
+  const user = await validateUser(session, prisma);
   return {
     prisma: prisma,
+    user: user,
   };
 }

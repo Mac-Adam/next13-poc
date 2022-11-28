@@ -75,3 +75,18 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 2. setup apolloClient in /lib/apollo.ts
 3. wrap whole app with apollo provider
 4. query as much as you want
+
+## Auth0
+
+1. follow https://auth0.com/docs/quickstart/webapp/nextjs/interactive
+2. follow https://auth0.com/blog/ultimate-guide-nextjs-authentication-auth0/ to get the token
+3. There is a lot of reading but in short:
+   - setup .env
+   - [...auth0].js file in api folder
+   - wrap thea app in UserPrivider
+   - use <a href="/api/auth/login">Login</a> to login
+   - on api user getSession to get the tokens
+4. add "graphql-shield": "7.5.0", "graphql-middleware": "6.0.9", to package.json IMPORTANT!!! use those versions thay are tested and work while new updates have some compatibility problems also make sure graphql version is 15
+5. crate auth folder in graphql folder with rules folder index.ts
+6. apply the middleware in graphql/index.ts
+7. Update db to include User field, now match auth token provided with request with existing data
