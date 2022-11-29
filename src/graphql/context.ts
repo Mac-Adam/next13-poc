@@ -1,7 +1,7 @@
 import { getSession, Session } from '@auth0/nextjs-auth0';
 import { PrismaClient } from '@prisma/client';
-import prisma from '../../prisma/pisma';
 import { validateUser } from './auth/validateUser';
+const prisma = new PrismaClient();
 export type User = {
   id: string;
   email: string;
