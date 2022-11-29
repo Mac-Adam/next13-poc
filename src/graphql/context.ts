@@ -13,6 +13,9 @@ export type Context = {
 export async function createContext({ req, res }: { req: any; res: any }): Promise<Context> {
   const session = getSession(req, res);
   const user = await validateUser(session, prisma);
+  console.log(user);
+  console.log(session);
+  console.log('Connection Made');
   return {
     prisma: prisma,
     user: user,
