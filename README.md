@@ -91,4 +91,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 6. apply the middleware in graphql/index.ts
 7. Update db to include User field, now match auth token provided with request with existing data
 
-EVERYTHING DONE
+EVERYTHING DONE...
+...Everyhing Wors
