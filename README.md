@@ -92,4 +92,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 7. Update db to include User field, now match auth token provided with request with existing data
 
 EVERYTHING DONE...
-...Everyhing Wors
+...Everyhing Wors...
+...HopefullyNow
